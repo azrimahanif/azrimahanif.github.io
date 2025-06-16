@@ -18,41 +18,87 @@ interface MediumPost {
 const Blog = () => {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [loading, setLoading] = useState(false);
-  const [mediumUsername, setMediumUsername] = useState("");
+  const [mediumUsername, setMediumUsername] = useState("azrimahanif");
   const [error, setError] = useState("");
+
+  // Auto-load your profile on component mount
+  useEffect(() => {
+    fetchMediumPosts("azrimahanif");
+  }, []);
 
   const fetchMediumPosts = async (username: string) => {
     setLoading(true);
     setError("");
     
     try {
-      // Using rss2json service to convert Medium RSS to JSON
-      const response = await fetch(
-        `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`
-      );
+      // Clean username - remove @ if present
+      const cleanUsername = username.replace('@', '');
       
-      if (!response.ok) {
-        throw new Error('Failed to fetch posts');
+      // Try different RSS URL formats
+      const rssUrls = [
+        `https://medium.com/feed/@${cleanUsername}`,
+        `https://medium.com/feed/${cleanUsername}`,
+        `https://${cleanUsername}.medium.com/feed`
+      ];
+      
+      let data = null;
+      let lastError = null;
+      
+      for (const rssUrl of rssUrls) {
+        try {
+          console.log(`Trying RSS URL: ${rssUrl}`);
+          const response = await fetch(
+            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
+          );
+          
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          
+          const result = await response.json();
+          console.log(`RSS result for ${rssUrl}:`, result);
+          
+          if (result.status === 'ok' && result.items && result.items.length > 0) {
+            data = result;
+            break;
+          } else if (result.status === 'ok' && result.items && result.items.length === 0) {
+            // Profile exists but no posts yet
+            data = result;
+            break;
+          }
+        } catch (err) {
+          lastError = err;
+          console.log(`Failed to fetch from ${rssUrl}:`, err);
+        }
       }
       
-      const data = await response.json();
+      if (!data) {
+        throw lastError || new Error('Could not fetch from any RSS URL');
+      }
       
-      if (data.status !== 'ok') {
-        throw new Error(data.message || 'Failed to fetch posts');
+      if (data.items.length === 0) {
+        setPosts([]);
+        setError("No posts found. Your Medium profile exists but doesn't have any published posts yet.");
+        return;
       }
       
       const mediumPosts: MediumPost[] = data.items.map((item: any) => ({
         title: item.title,
         link: item.link,
         pubDate: new Date(item.pubDate).toLocaleDateString(),
-        description: item.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...',
+        description: item.description ? 
+          item.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...' : 
+          'No description available',
         categories: item.categories || [],
         guid: item.guid
       }));
       
       setPosts(mediumPosts);
+      console.log(`Successfully loaded ${mediumPosts.length} posts`);
+      
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to fetch posts');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch posts';
+      setError(`Could not connect to Medium profile. ${errorMessage}`);
       console.error('Error fetching Medium posts:', err);
     } finally {
       setLoading(false);
@@ -78,7 +124,7 @@ const Blog = () => {
           <form onSubmit={handleSubmit} className="max-w-md mx-auto flex gap-2">
             <Input
               type="text"
-              placeholder="Enter your Medium username (e.g., @yourusername)"
+              placeholder="Enter Medium username (e.g., azrimahanif or @azrimahanif)"
               value={mediumUsername}
               onChange={(e) => setMediumUsername(e.target.value)}
               className="flex-1"
@@ -89,7 +135,12 @@ const Blog = () => {
           </form>
           
           {error && (
-            <p className="text-red-600 mt-4">{error}</p>
+            <div className="text-center mt-4">
+              <p className="text-red-600">{error}</p>
+              <p className="text-sm text-slate-500 mt-2">
+                Try publishing your first post on Medium or check if your username is correct
+              </p>
+            </div>
           )}
         </div>
 
@@ -133,7 +184,7 @@ const Blog = () => {
         ) : (
           !loading && !error && (
             <div className="text-center text-slate-500">
-              <p>Enter your Medium username above to load your blog posts</p>
+              <p>Loading your Medium posts...</p>
             </div>
           )
         )}
@@ -143,7 +194,7 @@ const Blog = () => {
             <Button 
               variant="outline" 
               size="lg"
-              onClick={() => window.open(`https://medium.com/@${mediumUsername}`, '_blank')}
+              onClick={() => window.open(`https://medium.com/@${mediumUsername.replace('@', '')}`, '_blank')}
             >
               View All Posts on Medium
             </Button>
