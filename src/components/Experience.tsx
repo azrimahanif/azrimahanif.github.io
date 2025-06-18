@@ -4,43 +4,61 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    company: "Tech Solutions Inc",
-    role: "Senior Data Engineer",
-    duration: "2022 - Present",
-    location: "Remote",
-    description: "Led the design and implementation of scalable data pipelines processing 10TB+ daily data",
+    company: "AAFİYAT TECH SDN BHD",
+    role: "Data Engineer & AI/ML Engineer",
+    duration: "May 2024 – Present",
+    location: "Alor Setar, Kedah",
+    description: "Designing and implementing scalable data ecosystems supporting real-time data streaming and AI model data pipelines",
     achievements: [
-      "Reduced data processing time by 60% through pipeline optimization",
-      "Implemented real-time analytics platform serving 1M+ users",
-      "Mentored junior engineers and established best practices"
+      "Designed and implemented scalable data ecosystems supporting real-time data streaming and AI model data pipelines",
+      "Built and optimized data warehouses on Google BigQuery to support machine learning workflows",
+      "Automated data pipelines using mage.ai to improve data accuracy and processing efficiency for AI applications",
+      "Developed and deployed a Large Language Model (LLM) chatbot project enabling users to receive personalized training recommendations and company policy information",
+      "Led AI surveillance project using CCTV feeds and YOLO object detection to monitor staff activities and office environment",
+      "Established data governance frameworks ensuring data quality and compliance for AI model training datasets"
     ],
-    technologies: ["Python", "Apache Spark", "AWS", "Kubernetes", "Docker"]
+    technologies: ["Google BigQuery", "mage.ai", "n8n", "Qdrant", "OpenAI API", "YOLO", "LLM", "TensorFlow"]
   },
   {
-    company: "DataCorp Analytics",
-    role: "Data Engineer",
-    duration: "2020 - 2022",
-    location: "San Francisco, CA",
-    description: "Built and maintained ETL pipelines for enterprise data warehouse solutions",
+    company: "Intel Microelectronic (M) SDN BHD",
+    role: "Product Development Engineer",
+    duration: "Oct 2020 – May 2024",
+    location: "Bayan Lepas, Pulau Pinang",
+    description: "Developed image preprocessing modules and automated data visualization dashboards for AI system performance monitoring",
     achievements: [
-      "Designed automated data quality monitoring system",
-      "Migrated legacy systems to cloud infrastructure",
-      "Collaborated with data scientists to deploy ML models"
+      "Developed image preprocessing modules using Keras for data augmentation including rotation, shifting, shearing, zooming, and normalization",
+      "Designed workflows for dataset preparation supporting object detection and image classification model development",
+      "Automated data visualization dashboards with Power BI to monitor model performance and operational metrics",
+      "Conducted root cause analysis on production data to improve hardware reliability impacting AI system performance"
     ],
-    technologies: ["SQL", "Python", "Airflow", "GCP", "BigQuery", "dbt"]
+    technologies: ["Keras", "Power BI", "Computer Vision", "Object Detection", "Image Classification", "Data Visualization"]
   },
   {
-    company: "StartupX",
-    role: "Junior Data Analyst",
-    duration: "2019 - 2020",
-    location: "New York, NY",
-    description: "Analyzed user behavior data to drive product decisions and growth strategies",
+    company: "Enovision SDN BHD",
+    role: "Software Engineer",
+    duration: "Oct 2019 – Sept 2020",
+    location: "Petaling Jaya, Selangor",
+    description: "Led AI research and development to integrate machine learning capabilities into vision inspection software",
     achievements: [
-      "Created automated reporting dashboards",
-      "Identified key growth opportunities through data analysis",
-      "Improved data accuracy by implementing validation rules"
+      "Led AI research and development to integrate machine learning capabilities into vision inspection software",
+      "Developed vision inspection systems with pattern matching, OCR, and QR code reading using .NET",
+      "Provided technical support and onsite installation for AI-enabled vision systems"
     ],
-    technologies: ["Python", "SQL", "Tableau", "PostgreSQL", "Pandas"]
+    technologies: [".NET", "Computer Vision", "OCR", "Pattern Matching", "QR Code", "Machine Learning"]
+  },
+  {
+    company: "Aerodyne Geekhub SDN BHD",
+    role: "Machine Learning Intern",
+    duration: "June 2018 – Sept 2018",
+    location: "Petaling Jaya, Selangor",
+    description: "Assisted in developing and optimizing machine learning models for autonomous drone AI applications",
+    achievements: [
+      "Assisted in developing and optimizing machine learning models using TensorFlow and YOLO",
+      "Prepared and pre-processed datasets with Pandas for model training and validation",
+      "Configured Nvidia Jetson development kit for autonomous drone AI applications",
+      "Integrated DJI SDK for drone-related machine learning project"
+    ],
+    technologies: ["TensorFlow", "YOLO", "Pandas", "Nvidia Jetson", "DJI SDK", "Autonomous Systems"]
   }
 ];
 
@@ -56,8 +74,8 @@ const Experience = () => {
             Experience
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Building data-driven solutions across different industries and scales, 
-            with a focus on scalability, performance, and business impact.
+            Building data-driven solutions and AI/ML systems across different industries, 
+            with expertise in computer vision, data engineering, and machine learning applications.
           </p>
         </div>
 
