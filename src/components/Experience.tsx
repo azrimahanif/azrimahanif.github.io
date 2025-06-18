@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    company: "AAFİYAT TECH SDN BHD",
+    company: "Aafiyat Tech Sdn Bhd",
     role: "Data Engineer & AI/ML Engineer",
     duration: "May 2024 – Present",
     location: "Alor Setar, Kedah",
@@ -20,7 +20,7 @@ const experiences = [
     technologies: ["Google BigQuery", "mage.ai", "n8n", "Qdrant", "OpenAI API", "YOLO", "LLM", "TensorFlow"]
   },
   {
-    company: "Intel Microelectronic (M) SDN BHD",
+    company: "Intel Microelectronic (M) Sdn Bhd",
     role: "Product Development Engineer",
     duration: "Oct 2020 – May 2024",
     location: "Bayan Lepas, Pulau Pinang",
@@ -34,7 +34,7 @@ const experiences = [
     technologies: ["Keras", "Power BI", "Computer Vision", "Object Detection", "Image Classification", "Data Visualization"]
   },
   {
-    company: "Enovision SDN BHD",
+    company: "Enovision Sdn Bhd",
     role: "Software Engineer",
     duration: "Oct 2019 – Sept 2020",
     location: "Petaling Jaya, Selangor",
@@ -47,7 +47,7 @@ const experiences = [
     technologies: [".NET", "Computer Vision", "OCR", "Pattern Matching", "QR Code", "Machine Learning"]
   },
   {
-    company: "Aerodyne Geekhub SDN BHD",
+    company: "Aerodyne Geekhub Sdn Bhd",
     role: "Machine Learning Intern",
     duration: "June 2018 – Sept 2018",
     location: "Petaling Jaya, Selangor",

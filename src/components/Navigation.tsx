@@ -34,7 +34,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          Portfolio
+          Azri Mahanif
         </div>
         
         {/* Desktop Navigation */}
