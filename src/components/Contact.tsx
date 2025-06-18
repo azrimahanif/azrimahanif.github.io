@@ -21,7 +21,11 @@ const Contact = () => {
               <Mail className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold text-slate-800 mb-2">Email</h3>
               <p className="text-slate-600 text-sm mb-4">Drop me a line</p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.open('mailto:azrimahanif@gmail.com', '_blank')}
+              >
                 Send Email
               </Button>
             </CardContent>
@@ -32,7 +36,11 @@ const Contact = () => {
               <Linkedin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold text-slate-800 mb-2">LinkedIn</h3>
               <p className="text-slate-600 text-sm mb-4">Let's connect professionally</p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.open('https://www.linkedin.com/in/azri-mahanif/', '_blank')}
+              >
                 Connect
               </Button>
             </CardContent>
@@ -43,7 +51,11 @@ const Contact = () => {
               <Github className="w-12 h-12 text-blue-600 mx-auto mb-4" />
               <h3 className="font-semibold text-slate-800 mb-2">GitHub</h3>
               <p className="text-slate-600 text-sm mb-4">Check out my code</p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.open('https://github.com/azrimahanif', '_blank')}
+              >
                 Follow
               </Button>
             </CardContent>
@@ -52,16 +64,28 @@ const Contact = () => {
 
         <footer className="border-t border-slate-200 pt-8 text-center">
           <p className="text-slate-600">
-            © 2024 Your Name. Built with React, TypeScript, and Tailwind CSS.
+            © 2024 Azri Mahanif. Built with React, TypeScript, and Tailwind CSS.
           </p>
           <div className="flex justify-center gap-4 mt-4">
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => window.open('https://github.com/azrimahanif', '_blank')}
+            >
               <Github className="w-4 h-4" />
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => window.open('https://www.linkedin.com/in/azri-mahanif/', '_blank')}
+            >
               <Linkedin className="w-4 h-4" />
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button 
+              variant="ghost" 
+              size="sm"
+              onClick={() => window.open('mailto:azrimahanif@gmail.com', '_blank')}
+            >
               <Mail className="w-4 h-4" />
             </Button>
           </div>

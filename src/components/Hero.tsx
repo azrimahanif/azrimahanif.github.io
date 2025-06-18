@@ -57,13 +57,28 @@ const Hero = () => {
         </div>
 
         <div className="flex justify-center gap-6 mb-16 animate-fade-in">
-          <Button variant="ghost" size="lg" className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300">
+          <Button 
+            variant="ghost" 
+            size="lg" 
+            className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+            onClick={() => window.open('https://github.com/azrimahanif', '_blank')}
+          >
             <Github className="w-6 h-6" />
           </Button>
-          <Button variant="ghost" size="lg" className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300">
+          <Button 
+            variant="ghost" 
+            size="lg" 
+            className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+            onClick={() => window.open('https://www.linkedin.com/in/azri-mahanif/', '_blank')}
+          >
             <Linkedin className="w-6 h-6" />
           </Button>
-          <Button variant="ghost" size="lg" className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300">
+          <Button 
+            variant="ghost" 
+            size="lg" 
+            className="hover:bg-blue-50 hover:text-blue-600 transition-all duration-300"
+            onClick={() => window.open('mailto:azrimahanif@gmail.com', '_blank')}
+          >
             <Mail className="w-6 h-6" />
           </Button>
         </div>
