@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Download, Menu, X } from "lucide-react";
@@ -49,14 +48,14 @@ const Navigation = () => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="ml-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+          <a
+            href="/Muhammad_Azri_Mahanif.pdf"
+            download
+            className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
           >
             <Download className="w-4 h-4 mr-2" />
-            CV
-          </Button>
+            Download CV
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -83,14 +82,14 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4"
+            <a
+              href="/Muhammad_Azri_Mahanif.pdf"
+              download
+              className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV
-            </Button>
+            </a>
           </div>
         </div>
       )}

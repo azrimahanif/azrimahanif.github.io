@@ -1,4 +1,3 @@
-
 import { ArrowDown, Mail, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -46,14 +45,15 @@ const Hero = () => {
             <Mail className="w-5 h-5 mr-2" />
             Get In Touch
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-2 border-slate-300 hover:border-blue-400 hover:bg-blue-50 px-8 py-4 text-lg font-semibold transition-all duration-300"
+          <a
+            href="/Muhammad_Azri_Mahanif.pdf"
+            download
+            className="border-2 border-slate-300 hover:border-blue-400 hover:bg-blue-50 px-8 py-4 text-lg font-semibold transition-all duration-300 flex items-center justify-center rounded"
+            style={{ minHeight: '56px' }}
           >
             <Download className="w-5 h-5 mr-2" />
             Download CV
-          </Button>
+          </a>
         </div>
 
         <div className="flex justify-center gap-6 mb-16 animate-fade-in">
