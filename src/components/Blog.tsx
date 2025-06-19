@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -29,73 +28,35 @@ const Blog = () => {
   const fetchMediumPosts = async (username: string) => {
     setLoading(true);
     setError("");
-    
     try {
       // Clean username - remove @ if present
       const cleanUsername = username.replace('@', '');
-      
-      // Try different RSS URL formats
-      const rssUrls = [
-        `https://medium.com/feed/@${cleanUsername}`,
-        `https://medium.com/feed/${cleanUsername}`,
-        `https://${cleanUsername}.medium.com/feed`
-      ];
-      
-      let data = null;
-      let lastError = null;
-      
-      for (const rssUrl of rssUrls) {
-        try {
-          console.log(`Trying RSS URL: ${rssUrl}`);
-          const response = await fetch(
-            `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`
-          );
-          
-          if (!response.ok) {
-            throw new Error(`HTTP ${response.status}`);
-          }
-          
-          const result = await response.json();
-          console.log(`RSS result for ${rssUrl}:`, result);
-          
-          if (result.status === 'ok' && result.items && result.items.length > 0) {
-            data = result;
-            break;
-          } else if (result.status === 'ok' && result.items && result.items.length === 0) {
-            // Profile exists but no posts yet
-            data = result;
-            break;
-          }
-        } catch (err) {
-          lastError = err;
-          console.log(`Failed to fetch from ${rssUrl}:`, err);
-        }
+      // Use feed2json.org for RSS to JSON conversion
+      const rssUrl = `https://medium.com/feed/@${cleanUsername}`;
+      const response = await fetch(
+        `https://feed2json.org/convert?url=${encodeURIComponent(rssUrl)}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
       }
-      
-      if (!data) {
-        throw lastError || new Error('Could not fetch from any RSS URL');
-      }
-      
-      if (data.items.length === 0) {
+      const data = await response.json();
+      if (!data.items || data.items.length === 0) {
         setPosts([]);
         setError("No posts found. Your Medium profile exists but doesn't have any published posts yet.");
         return;
       }
-      
+      // Map the feed2json.org structure to MediumPost
       const mediumPosts: MediumPost[] = data.items.map((item: any) => ({
         title: item.title,
-        link: item.link,
-        pubDate: new Date(item.pubDate).toLocaleDateString(),
-        description: item.description ? 
-          item.description.replace(/<[^>]*>/g, '').substring(0, 200) + '...' : 
-          'No description available',
-        categories: item.categories || [],
-        guid: item.guid
+        link: item.url,
+        pubDate: item.date_published ? new Date(item.date_published).toLocaleDateString() : '',
+        description: item.content_html
+          ? item.content_html.replace(/<[^>]*>/g, '').substring(0, 200) + '...'
+          : 'No description available',
+        categories: item.tags || [],
+        guid: item.guid || item.url
       }));
-      
       setPosts(mediumPosts);
-      console.log(`Successfully loaded ${mediumPosts.length} posts`);
-      
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to fetch posts';
       setError(`Could not connect to Medium profile. ${errorMessage}`);
