@@ -1,6 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import TechIcon from "./TechIcon";
 
 const skillCategories = [
   {
@@ -43,13 +44,13 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+    <section id="skills" className="py-24 px-6 bg-gradient-to-br from-slate-50 to-cyan-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
             🛠️ Technical Expertise
           </div>
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl font-bold text-slate-900 mb-6">
             Skills & Technologies
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -67,11 +68,12 @@ const Skills = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (
-                    <Badge 
-                      key={i} 
-                      variant="secondary" 
-                      className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-slate-700 border border-blue-200 hover:from-blue-100 hover:to-purple-100 transition-all duration-300"
+                    <Badge
+                      key={i}
+                      variant="secondary"
+                      className="px-3 py-2 bg-gradient-to-r from-cyan-50 to-emerald-50 text-slate-700 border border-cyan-200 hover:from-cyan-100 hover:to-emerald-100 transition-all duration-300 flex items-center gap-2 hover:scale-105"
                     >
+                      <TechIcon tech={skill} className="w-4 h-4" />
                       {skill}
                     </Badge>
                   ))}
