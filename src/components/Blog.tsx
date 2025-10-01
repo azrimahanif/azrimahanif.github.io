@@ -13,6 +13,15 @@ interface MediumPost {
   guid: string;
 }
 
+interface MediumFeedItem {
+  title: string;
+  link: string;
+  pubDate?: string;
+  description?: string;
+  categories?: string[];
+  guid?: string;
+}
+
 const Blog = () => {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [loading, setLoading] = useState(false);
@@ -45,7 +54,7 @@ const Blog = () => {
             throw new Error("No posts found");
           }
           
-          const mediumPosts: MediumPost[] = data.items.map((item: any) => ({
+          const mediumPosts: MediumPost[] = data.items.map((item: MediumFeedItem) => ({
             title: item.title,
             link: item.link,
             pubDate: item.pubDate ? new Date(item.pubDate).toLocaleDateString() : '',
@@ -108,7 +117,7 @@ const Blog = () => {
             throw new Error("No posts found");
           }
           
-          const mediumPosts: MediumPost[] = data.items.map((item: any) => ({
+          const mediumPosts: MediumPost[] = data.items.map((item: MediumFeedItem) => ({
             title: item.title,
             link: item.link,
             pubDate: item.pubDate ? new Date(item.pubDate).toLocaleDateString() : '',
@@ -160,7 +169,7 @@ const Blog = () => {
     <section id="blog" className="py-20 px-6 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-800 mb-4">Latest Blog Posts</h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Latest Blog Posts</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
             Sharing insights, experiences, and best practices in data engineering and machine learning
           </p>
@@ -187,9 +196,9 @@ const Blog = () => {
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
                     <span className="text-sm text-slate-500">{post.pubDate}</span>
-                    <ExternalLink className="w-4 h-4 text-blue-600" />
+                    <ExternalLink className="w-4 h-4 text-cyan-500" />
                   </div>
-                  <CardTitle className="text-xl text-slate-800 line-clamp-2 leading-tight">
+                  <CardTitle className="text-xl text-slate-900 line-clamp-2 leading-tight">
                     {post.title}
                   </CardTitle>
                   <CardDescription className="text-slate-600 line-clamp-3">
@@ -208,7 +217,7 @@ const Blog = () => {
                   </div>
                   <Button 
                     variant="ghost" 
-                    className="w-full justify-start p-0 h-auto text-blue-600 hover:text-blue-700"
+                    className="w-full justify-start p-0 h-auto text-cyan-500 hover:text-cyan-600"
                     onClick={() => window.open(post.link, '_blank')}
                   >
                     Read on Medium →

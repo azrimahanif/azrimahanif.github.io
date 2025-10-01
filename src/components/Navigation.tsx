@@ -29,10 +29,10 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-slate-200/50" : "bg-transparent"
+      isScrolled ? "bg-slate-50/90 backdrop-blur-md shadow-lg border-b border-slate-200/50" : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="font-bold text-2xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <div className="font-bold text-2xl text-cyan-500">
           Azri Mahanif
         </div>
         
@@ -42,16 +42,16 @@ const Navigation = () => {
             <button 
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium relative group"
+              className="text-slate-700 hover:text-cyan-600 transition-colors duration-300 font-medium relative group"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
           <a
             href="/Muhammad_Azri_Mahanif.pdf"
             download
-            className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
+            className="w-full border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
           >
             <Download className="w-4 h-4 mr-2" />
             Download CV
@@ -71,13 +71,13 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-slate-200/50">
+        <div className="md:hidden bg-slate-50/95 backdrop-blur-md border-t border-slate-200/50">
           <div className="px-6 py-4 space-y-4">
             {navItems.map((item) => (
               <button 
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-slate-700 hover:text-blue-600 transition-colors duration-300 font-medium py-2"
+                className="block w-full text-left text-slate-700 hover:text-cyan-600 transition-colors duration-300 font-medium py-2"
               >
                 {item.label}
               </button>
@@ -85,7 +85,7 @@ const Navigation = () => {
             <a
               href="/Muhammad_Azri_Mahanif.pdf"
               download
-              className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
+              className="w-full border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV

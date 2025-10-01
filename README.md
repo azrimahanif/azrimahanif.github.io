@@ -1,22 +1,20 @@
-# Welcome to your Lovable project
+# Personal Portfolio Website
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/f2b88a45-550a-47fc-83a9-d946890c8086
+**URL**: https://azrimahanif.github.io
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use your preferred IDE**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f2b88a45-550a-47fc-83a9-d946890c8086) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
+Clone this repo and start developing locally.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +60,14 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/f2b88a45-550a-47fc-83a9-d946890c8086) and click on Share -> Publish.
+This project is configured to deploy to GitHub Pages. Simply run:
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+npm run deploy
+```
+
+## Can I connect a custom domain to my project?
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+To connect a custom domain to your GitHub Pages site, navigate to your repository Settings > Pages and configure your custom domain there.

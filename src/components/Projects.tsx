@@ -102,7 +102,7 @@ const Projects = () => {
           <div className="inline-block px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium mb-6">
             🚀 Portfolio Showcase
           </div>
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl font-bold text-slate-900 mb-6">
             Featured Projects
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -122,7 +122,7 @@ const Projects = () => {
                       {project.type}
                     </Badge>
                     <CardTitle className="text-2xl text-slate-900 mb-2">{project.title}</CardTitle>
-                    <CardDescription className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <CardDescription className="text-lg font-semibold text-cyan-500">
                       {project.company}
                     </CardDescription>
                   </div>
@@ -130,11 +130,11 @@ const Projects = () => {
                 <p className="text-slate-700 text-lg leading-relaxed mb-6">{project.description}</p>
                 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-800 mb-4 text-lg">Key Achievements:</h4>
+                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {project.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start text-slate-700">
-                        <span className="text-blue-600 mr-3 mt-1.5">●</span>
+                        <span className="text-cyan-500 mr-3 mt-1.5">●</span>
                         <span className="leading-relaxed">{achievement}</span>
                       </li>
                     ))}
@@ -143,7 +143,7 @@ const Projects = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-800 mb-4 text-lg">Technologies Used:</h4>
+                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech, i) => (
                       <Badge 

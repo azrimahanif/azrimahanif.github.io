@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 const experiences = [
   {
     company: "Aafiyat Tech Sdn Bhd",
-    role: "Data Engineer & AI/ML Engineer",
+    role: "AI Data Engineer",
     duration: "May 2024 – Present",
     location: "Alor Setar, Kedah",
     description: "Designing and implementing scalable data ecosystems supporting real-time data streaming and AI model data pipelines",
@@ -67,10 +67,10 @@ const Experience = () => {
     <section id="experience" className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium mb-6">
+          <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
             💼 Professional Journey
           </div>
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-6">
+          <h2 className="text-5xl font-bold text-slate-900 mb-6">
             Experience
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -86,7 +86,7 @@ const Experience = () => {
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start">
                   <div className="flex-1">
                     <CardTitle className="text-2xl text-slate-900 mb-2">{exp.role}</CardTitle>
-                    <CardDescription className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <CardDescription className="text-xl font-semibold text-cyan-500">
                       {exp.company}
                     </CardDescription>
                   </div>
@@ -99,24 +99,24 @@ const Experience = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-800 mb-4 text-lg">Key Achievements:</h4>
+                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start text-slate-700">
-                        <span className="text-blue-600 mr-3 mt-1.5">●</span>
+                        <span className="text-cyan-500 mr-3 mt-1.5">●</span>
                         <span className="leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-800 mb-4 text-lg">Technologies:</h4>
+                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Technologies:</h4>
                   <div className="flex flex-wrap gap-3">
                     {exp.technologies.map((tech, i) => (
                       <Badge 
                         key={i} 
                         variant="secondary" 
-                        className="px-3 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-slate-700 border border-blue-200 hover:from-blue-100 hover:to-purple-100 transition-all duration-300"
+                        className="px-3 py-1 bg-gradient-to-r from-cyan-50 to-emerald-50 text-slate-700 border border-cyan-200 hover:from-cyan-100 hover:to-emerald-100 transition-all duration-300"
                       >
                         {tech}
                       </Badge>
