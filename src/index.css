@@ -6,90 +6,87 @@
 
 @layer base {
   :root {
-    --background: 210 33% 98%;
-    --foreground: 215 25% 11%;
+    /* Nature-inspired light theme - organic earth tones */
+    --background: 45 20% 98%; /* Warm off-white like natural paper */
+    --foreground: 220 15% 25%; /* Soft charcoal for text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 11%;
+    --card: 45 15% 96%; /* Slightly cream card background */
+    --card-foreground: 220 15% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 11%;
+    --popover: 45 15% 96%;
+    --popover-foreground: 220 15% 25%;
 
-    --primary: 188 100% 42%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 30% 25%; /* Forest green - deep and natural */
+    --primary-foreground: 45 20% 98%;
 
-    --secondary: 160 84% 39%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 35% 35%; /* Bark brown - rich earth tone */
+    --secondary-foreground: 45 20% 98%;
 
-    --muted: 210 33% 98%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 45 15% 94%; /* Soft beige for muted elements */
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 210 33% 98%;
-    --accent-foreground: 215 25% 11%;
+    --accent: 200 40% 75%; /* Sky blue - soft and natural */
+    --accent-foreground: 220 15% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 15 65% 55%; /* Earthy red like clay */
+    --destructive-foreground: 45 20% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 188 100% 42%;
+    --border: 25 15% 85%; /* Subtle earth-toned borders */
+    --input: 25 15% 85%;
+    --ring: 120 30% 25%; /* Forest green focus ring */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly more rounded for organic feel */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 188 100% 42%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 188 100% 42%;
+    /* Sidebar nature theme */
+    --sidebar-background: 45 18% 97%;
+    --sidebar-foreground: 220 12% 30%;
+    --sidebar-primary: 120 30% 25%;
+    --sidebar-primary-foreground: 45 20% 98%;
+    --sidebar-accent: 45 12% 92%;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 25 12% 88%;
+    --sidebar-ring: 120 30% 25%;
   }
 
   .dark {
-    --background: 215 25% 11%;
-    --foreground: 210 33% 98%;
+    /* Nature-inspired dark theme - deep forest and earth tones */
+    --background: 120 25% 8%; /* Deep forest green like nighttime forest */
+    --foreground: 45 15% 92%; /* Warm cream text for contrast */
 
-    --card: 215 25% 11%;
-    --card-foreground: 210 33% 98%;
+    --card: 120 20% 12%; /* Dark green cards */
+    --card-foreground: 45 15% 92%;
 
-    --popover: 215 25% 11%;
-    --popover-foreground: 210 33% 98%;
+    --popover: 120 20% 12%;
+    --popover-foreground: 45 15% 92%;
 
-    --primary: 188 100% 42%;
-    --primary-foreground: 215 25% 11%;
+    --primary: 120 30% 40%; /* Lighter forest green for primary */
+    --primary-foreground: 120 25% 8%;
 
-    --secondary: 160 84% 39%;
-    --secondary-foreground: 215 25% 11%;
+    --secondary: 25 30% 45%; /* Muted bark brown */
+    --secondary-foreground: 45 15% 92%;
 
-    --muted: 217 32% 18%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 120 22% 15%; /* Very dark green for muted */
+    --muted-foreground: 45 10% 70%;
 
-    --accent: 217 32% 18%;
-    --accent-foreground: 210 33% 98%;
+    --accent: 200 35% 60%; /* Soft sky blue accent */
+    --accent-foreground: 120 25% 8%;
 
-    --destructive: 0 62.8% 31%;
-    --destructive-foreground: 210 33% 98%;
+    --destructive: 15 50% 65%; /* Earthy red for dark mode */
+    --destructive-foreground: 45 15% 92%;
 
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
-    --ring: 188 100% 42%;
+    --border: 120 18% 20%; /* Dark green borders */
+    --input: 120 18% 20%;
+    --ring: 120 30% 40%; /* Forest green focus ring */
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 96%;
-    --sidebar-primary: 188 100% 42%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 16%;
-    --sidebar-accent-foreground: 240 4.8% 96%;
-    --sidebar-border: 240 3.7% 16%;
-    --sidebar-ring: 188 100% 42%;
+    /* Dark sidebar nature theme */
+    --sidebar-background: 120 23% 10%;
+    --sidebar-foreground: 45 12% 88%;
+    --sidebar-primary: 120 30% 40%;
+    --sidebar-primary-foreground: 120 25% 8%;
+    --sidebar-accent: 120 20% 18%;
+    --sidebar-accent-foreground: 45 15% 92%;
+    --sidebar-border: 120 15% 22%;
+    --sidebar-ring: 120 30% 40%;
   }
 }
 
@@ -105,6 +102,38 @@
     display: block;
     visibility: visible;
     opacity: 1;
+    font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Add subtle paper texture */
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(139, 69, 19, 0.02) 2px,
+        rgba(139, 69, 19, 0.02) 4px
+      );
+  }
+
+  /* Organic typography system */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  code, pre {
+    font-family: 'Space Mono', 'Courier New', monospace;
+  }
+
+  /* Natural text selection */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.2);
+    color: hsl(var(--foreground));
   }
 
   html {
@@ -120,5 +149,100 @@
     visibility: visible !important;
     opacity: 1 !important;
     position: static !important;
+  }
+}
+
+@layer utilities {
+  /* Natural texture utilities */
+  .texture-paper {
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        rgba(139, 69, 19, 0.03) 1px,
+        rgba(139, 69, 19, 0.03) 2px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 1px,
+        rgba(139, 69, 19, 0.03) 1px,
+        rgba(139, 69, 19, 0.03) 2px
+      );
+  }
+
+  .texture-wood {
+    background-image:
+      repeating-linear-gradient(
+        90deg,
+        rgba(101, 67, 33, 0.1),
+        rgba(101, 67, 33, 0.1) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+  }
+
+  .texture-stone {
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(112, 112, 112, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 80% 20%, rgba(112, 112, 112, 0.08) 2px, transparent 2px),
+      radial-gradient(circle at 40% 80%, rgba(112, 112, 112, 0.12) 1px, transparent 1px);
+  }
+
+  /* Natural shadow effects */
+  .shadow-natural {
+    box-shadow:
+      0 4px 6px -1px rgba(139, 69, 19, 0.15),
+      0 2px 4px -1px rgba(139, 69, 19, 0.1),
+      inset 0 1px 0 rgba(139, 69, 19, 0.05);
+  }
+
+  .shadow-earth {
+    box-shadow:
+      0 8px 12px -2px rgba(101, 67, 33, 0.2),
+      0 4px 8px -2px rgba(101, 67, 33, 0.15);
+  }
+
+  /* Natural animations */
+  @keyframes sway {
+    0%, 100% { transform: translateX(0px) rotate(0deg); }
+    25% { transform: translateX(-1px) rotate(-0.5deg); }
+    75% { transform: translateX(1px) rotate(0.5deg); }
+  }
+
+  @keyframes leaf-fall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(10px) rotate(15deg); opacity: 0; }
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  .animate-sway {
+    animation: sway 4s ease-in-out infinite;
+  }
+
+  .animate-leaf-fall {
+    animation: leaf-fall 6s ease-in-out infinite;
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+
+  /* Natural borders */
+  .border-organic {
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    border-radius: 0.75rem;
+  }
+
+  .border-rough {
+    border: 2px solid rgba(101, 67, 33, 0.3);
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
   }
 }

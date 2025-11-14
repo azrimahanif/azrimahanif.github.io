@@ -96,17 +96,17 @@ const Projects = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="projects" className="py-24 px-6 bg-white">
+    <section id="projects" className="py-24 px-6 texture-paper">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium mb-6">
+          {/* <div className="inline-block px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-medium mb-6 texture-stone">
             🚀 Portfolio Showcase
-          </div>
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          </div> */}
+          <h2 className="text-5xl font-bold text-foreground mb-6">
             Featured Projects
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Real-world data engineering and AI/ML projects that deliver measurable business impact 
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Real-world data engineering and AI/ML projects that deliver measurable business impact
             across different industries and use cases.
           </p>
         </div>
@@ -114,27 +114,27 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 mb-20">
           {featuredProjects.map((project, index) => (
-            <Card key={index} className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
+            <Card key={index} className="hover:shadow-earth transition-all duration-500 hover:-translate-y-1 border-organic shadow-natural bg-card texture-wood animate-fade-in">
               <CardHeader className="pb-4">
                 <div className="flex justify-between items-start mb-4">
                   <div>
-                    <Badge variant="secondary" className="mb-3 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 border border-blue-200">
+                    <Badge variant="secondary" className="mb-3 bg-primary/10 text-primary border border-primary/20">
                       {project.type}
                     </Badge>
-                    <CardTitle className="text-2xl text-slate-900 mb-2">{project.title}</CardTitle>
-                    <CardDescription className="text-lg font-semibold text-cyan-500">
+                    <CardTitle className="text-2xl text-card-foreground mb-2">{project.title}</CardTitle>
+                    <CardDescription className="text-lg font-semibold text-primary">
                       {project.company}
                     </CardDescription>
                   </div>
                 </div>
-                <p className="text-slate-700 text-lg leading-relaxed mb-6">{project.description}</p>
+                <p className="text-card-foreground text-lg leading-relaxed mb-6 opacity-90">{project.description}</p>
                 
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Key Achievements:</h4>
+                  <h4 className="font-semibold text-card-foreground mb-4 text-lg">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {project.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start text-slate-700">
-                        <span className="text-cyan-500 mr-3 mt-1.5">●</span>
+                      <li key={i} className="flex items-start text-card-foreground opacity-90">
+                        <span className="text-primary mr-3 mt-1.5">●</span>
                         <span className="leading-relaxed">{achievement}</span>
                       </li>
                     ))}
@@ -143,13 +143,13 @@ const Projects = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Technologies Used:</h4>
+                  <h4 className="font-semibold text-card-foreground mb-4 text-lg">Technologies Used:</h4>
                   <div className="flex flex-wrap gap-3">
                     {project.technologies.map((tech, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="outline" 
-                        className="px-3 py-1 border-slate-300 hover:bg-slate-50 transition-colors"
+                      <Badge
+                        key={i}
+                        variant="outline"
+                        className="px-3 py-1 border-primary/30 hover:bg-primary/10 transition-colors"
                       >
                         {tech}
                       </Badge>
@@ -157,11 +157,11 @@ const Projects = () => {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <Button variant="outline" size="sm" className="flex items-center">
+                  <Button variant="outline" size="sm" className="flex items-center border-primary hover:bg-primary hover:text-primary-foreground">
                     <Eye className="w-4 h-4 mr-2" />
                     View Details
                   </Button>
-                  <Button variant="outline" size="sm" className="flex items-center">
+                  <Button variant="outline" size="sm" className="flex items-center border-primary hover:bg-primary hover:text-primary-foreground">
                     <Github className="w-4 h-4 mr-2" />
                     Documentation
                   </Button>
@@ -173,19 +173,19 @@ const Projects = () => {
 
         {/* Other Projects */}
         <div>
-          <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center">Additional Projects</h3>
+          <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Additional Projects</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {otherProjects.map((project, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-slate-200">
+              <Card key={index} className="hover:shadow-earth transition-all duration-300 hover:-translate-y-1 border-organic shadow-natural bg-card texture-stone animate-fade-in">
                 <CardHeader>
-                  <Badge variant="secondary" className="mb-3 w-fit bg-slate-100 text-slate-700">
+                  <Badge variant="secondary" className="mb-3 w-fit bg-secondary/20 text-secondary-foreground">
                     {project.type}
                   </Badge>
-                  <CardTitle className="text-xl text-slate-900">{project.title}</CardTitle>
-                  <CardDescription className="text-slate-600 font-medium mb-3">
+                  <CardTitle className="text-xl text-card-foreground">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground font-medium mb-3">
                     {project.company}
                   </CardDescription>
-                  <CardDescription className="text-slate-600 leading-relaxed">
+                  <CardDescription className="text-muted-foreground leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -193,14 +193,14 @@ const Projects = () => {
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, i) => (
-                        <Badge key={i} variant="outline" className="text-xs border-slate-300">
+                        <Badge key={i} variant="outline" className="text-xs border-secondary/30 hover:bg-secondary/10">
                           {tech}
                         </Badge>
                       ))}
                     </div>
                   </div>
                   <div className="flex gap-2">
-                    <Button variant="ghost" size="sm" className="flex items-center">
+                    <Button variant="ghost" size="sm" className="flex items-center hover:bg-accent/20 hover:text-accent">
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Learn More
                     </Button>

@@ -64,59 +64,59 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6 bg-white">
+    <section id="experience" className="py-24 px-6 texture-paper">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
+          {/* <div className="inline-block px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-medium mb-6 texture-stone">
             💼 Professional Journey
-          </div>
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          </div> */}
+          <h2 className="text-5xl font-bold text-foreground mb-6">
             Experience
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Building data-driven solutions and AI/ML systems across different industries, 
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Building data-driven solutions and AI/ML systems across different industries,
             with expertise in computer vision, data engineering, and machine learning applications.
           </p>
         </div>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
+            <Card key={index} className="hover:shadow-earth transition-all duration-500 hover:-translate-y-1 border-organic shadow-natural bg-card texture-wood animate-fade-in">
               <CardHeader className="pb-4">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start">
                   <div className="flex-1">
-                    <CardTitle className="text-2xl text-slate-900 mb-2">{exp.role}</CardTitle>
-                    <CardDescription className="text-xl font-semibold text-cyan-500">
+                    <CardTitle className="text-2xl text-card-foreground mb-2">{exp.role}</CardTitle>
+                    <CardDescription className="text-xl font-semibold text-primary">
                       {exp.company}
                     </CardDescription>
                   </div>
-                  <div className="text-sm text-slate-500 mt-4 md:mt-0 md:text-right">
-                    <div className="font-semibold text-slate-700">{exp.duration}</div>
+                  <div className="text-sm text-muted-foreground mt-4 md:mt-0 md:text-right">
+                    <div className="font-semibold text-foreground">{exp.duration}</div>
                     <div>{exp.location}</div>
                   </div>
                 </div>
-                <p className="text-slate-700 mt-6 text-lg leading-relaxed">{exp.description}</p>
+                <p className="text-card-foreground mt-6 text-lg leading-relaxed opacity-90">{exp.description}</p>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Key Achievements:</h4>
+                  <h4 className="font-semibold text-card-foreground mb-4 text-lg">Key Achievements:</h4>
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-start text-slate-700">
-                        <span className="text-cyan-500 mr-3 mt-1.5">●</span>
+                      <li key={i} className="flex items-start text-card-foreground opacity-90">
+                        <span className="text-primary mr-3 mt-1.5">●</span>
                         <span className="leading-relaxed">{achievement}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 mb-4 text-lg">Technologies:</h4>
+                  <h4 className="font-semibold text-card-foreground mb-4 text-lg">Technologies:</h4>
                   <div className="flex flex-wrap gap-3">
                     {exp.technologies.map((tech, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="secondary" 
-                        className="px-3 py-1 bg-gradient-to-r from-cyan-50 to-emerald-50 text-slate-700 border border-cyan-200 hover:from-cyan-100 hover:to-emerald-100 transition-all duration-300"
+                      <Badge
+                        key={i}
+                        variant="secondary"
+                        className="px-3 py-1 bg-secondary/20 text-secondary-foreground border border-secondary/30 hover:bg-secondary/30 transition-all duration-300 texture-paper"
                       >
                         {tech}
                       </Badge>

@@ -166,18 +166,18 @@ const Blog = () => {
   };
 
   return (
-    <section id="blog" className="py-20 px-6 bg-slate-50">
+    <section id="blog" className="py-20 px-6 texture-wood">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Latest Blog Posts</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Latest Blog Posts</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Sharing insights, experiences, and best practices in data engineering and machine learning
           </p>
           
           {error && (
             <div className="text-center mt-4">
-              <p className="text-red-600">{error}</p>
-              <p className="text-sm text-slate-500 mt-2">
+              <p className="text-destructive">{error}</p>
+              <p className="text-sm text-muted-foreground mt-2">
                 Try publishing your first post on Medium or check if your username is correct
               </p>
             </div>
@@ -186,22 +186,22 @@ const Blog = () => {
 
         {loading ? (
           <div className="text-center py-12">
-            <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-slate-600" />
-            <p className="text-slate-600">Loading blog posts...</p>
+            <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-primary" />
+            <p className="text-muted-foreground">Loading blog posts...</p>
           </div>
         ) : posts.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, index) => (
-              <Card key={post.guid} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 bg-white">
+              <Card key={post.guid} className="hover:shadow-earth transition-all duration-300 hover:-translate-y-1 bg-card border-organic shadow-natural texture-paper animate-fade-in">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-2">
-                    <span className="text-sm text-slate-500">{post.pubDate}</span>
-                    <ExternalLink className="w-4 h-4 text-cyan-500" />
+                    <span className="text-sm text-muted-foreground">{post.pubDate}</span>
+                    <ExternalLink className="w-4 h-4 text-primary" />
                   </div>
-                  <CardTitle className="text-xl text-slate-900 line-clamp-2 leading-tight">
+                  <CardTitle className="text-xl text-card-foreground line-clamp-2 leading-tight">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-slate-600 line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3">
                     {post.description}
                   </CardDescription>
                 </CardHeader>
@@ -209,15 +209,15 @@ const Blog = () => {
                   <div className="mb-4">
                     <div className="flex flex-wrap gap-2">
                       {post.categories.slice(0, 3).map((category, i) => (
-                        <Badge key={i} variant="outline" className="text-xs">
+                        <Badge key={i} variant="outline" className="text-xs border-primary/30 hover:bg-primary/10">
                           {category}
                         </Badge>
                       ))}
                     </div>
                   </div>
-                  <Button 
-                    variant="ghost" 
-                    className="w-full justify-start p-0 h-auto text-cyan-500 hover:text-cyan-600"
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start p-0 h-auto text-primary hover:text-primary/80"
                     onClick={() => window.open(post.link, '_blank')}
                   >
                     Read on Medium →
@@ -228,7 +228,7 @@ const Blog = () => {
           </div>
         ) : (
           !error && (
-            <div className="text-center text-slate-500">
+            <div className="text-center text-muted-foreground">
               <p>No blog posts found.</p>
             </div>
           )
@@ -236,9 +236,10 @@ const Blog = () => {
 
         {posts.length > 0 && (
           <div className="text-center mt-12">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
+              className="border-primary hover:bg-primary hover:text-primary-foreground"
               onClick={() => window.open(`https://medium.com/@azrimahanif`, '_blank')}
             >
               View All Posts on Medium

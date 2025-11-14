@@ -44,26 +44,26 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 px-6 bg-gradient-to-br from-slate-50 to-cyan-50">
+    <section id="skills" className="py-24 px-6 texture-stone">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium mb-6">
+          {/* <div className="inline-block px-4 py-2 bg-accent/10 text-accent border border-accent/20 rounded-full text-sm font-medium mb-6 texture-paper">
             🛠️ Technical Expertise
-          </div>
-          <h2 className="text-5xl font-bold text-slate-900 mb-6">
+          </div> */}
+          <h2 className="text-5xl font-bold text-foreground mb-6">
             Skills & Technologies
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive expertise in data engineering, AI/ML, and modern cloud technologies 
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Comprehensive expertise in data engineering, AI/ML, and modern cloud technologies
             for building scalable data solutions and intelligent systems.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 shadow-lg bg-gradient-to-br from-white to-slate-50">
+            <Card key={index} className="hover:shadow-earth transition-all duration-500 hover:-translate-y-1 border-organic shadow-natural bg-card texture-paper animate-fade-in">
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl text-slate-900">{category.title}</CardTitle>
+                <CardTitle className="text-xl text-card-foreground">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ const Skills = () => {
                     <Badge
                       key={i}
                       variant="secondary"
-                      className="px-3 py-2 bg-gradient-to-r from-cyan-50 to-emerald-50 text-slate-700 border border-cyan-200 hover:from-cyan-100 hover:to-emerald-100 transition-all duration-300 flex items-center gap-2 hover:scale-105"
+                      className="px-3 py-2 bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all duration-300 flex items-center gap-2 hover:scale-105 animate-gentle-pulse"
                     >
                       <TechIcon tech={skill} className="w-4 h-4" />
                       {skill}
@@ -85,18 +85,18 @@ const Skills = () => {
 
         {/* Certifications Section */}
         <div className="mt-16">
-          <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Certifications</h3>
+          <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200">
+            <Card className="hover:shadow-earth transition-all duration-300 bg-card border-primary/30 shadow-natural texture-wood animate-fade-in">
               <CardHeader>
-                <CardTitle className="text-lg text-slate-900">Professional Data Science</CardTitle>
-                <CardDescription className="text-green-700 font-medium">USM Computer Science School (Ktechno Sdn.Bhd) • 2022</CardDescription>
+                <CardTitle className="text-lg text-card-foreground">Professional Data Science</CardTitle>
+                <CardDescription className="text-primary font-medium">USM Computer Science School (Ktechno Sdn.Bhd) • 2022</CardDescription>
               </CardHeader>
             </Card>
-            <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-to-br from-orange-50 to-yellow-50 border border-orange-200">
+            <Card className="hover:shadow-earth transition-all duration-300 bg-card border-secondary/30 shadow-natural texture-stone animate-fade-in">
               <CardHeader>
-                <CardTitle className="text-lg text-slate-900">Lean Six Sigma Yellow Belt</CardTitle>
-                <CardDescription className="text-orange-700 font-medium">OTC Sdn Bhd • 2022</CardDescription>
+                <CardTitle className="text-lg text-card-foreground">Lean Six Sigma Yellow Belt</CardTitle>
+                <CardDescription className="text-secondary font-medium">OTC Sdn Bhd • 2022</CardDescription>
               </CardHeader>
             </Card>
           </div>

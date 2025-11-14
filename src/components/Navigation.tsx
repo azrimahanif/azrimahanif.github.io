@@ -29,29 +29,29 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-slate-50/90 backdrop-blur-md shadow-lg border-b border-slate-200/50" : "bg-transparent"
+      isScrolled ? "bg-background/90 backdrop-blur-md shadow-natural border-b border-foreground/10 texture-paper" : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="font-bold text-2xl text-cyan-500">
+        <div className="font-bold text-2xl text-primary font-serif">
           Azri Mahanif
         </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <button 
+            <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-slate-700 hover:text-cyan-600 transition-colors duration-300 font-medium relative group"
+              className="text-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
           ))}
           <a
             href="/Muhammad_Azri_Mahanif.pdf"
             download
-            className="w-full border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
+            className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center rounded px-4 py-2 shadow-natural hover:shadow-earth"
           >
             <Download className="w-4 h-4 mr-2" />
             Download CV
@@ -59,10 +59,10 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="md:hidden"
+        <Button
+          variant="ghost"
+          size="sm"
+          className="md:hidden hover:bg-accent/20 hover:text-accent"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -71,13 +71,13 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-slate-50/95 backdrop-blur-md border-t border-slate-200/50">
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-foreground/10 texture-paper">
           <div className="px-6 py-4 space-y-4">
             {navItems.map((item) => (
-              <button 
+              <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-slate-700 hover:text-cyan-600 transition-colors duration-300 font-medium py-2"
+                className="block w-full text-left text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
               >
                 {item.label}
               </button>
@@ -85,7 +85,7 @@ const Navigation = () => {
             <a
               href="/Muhammad_Azri_Mahanif.pdf"
               download
-              className="w-full border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2"
+              className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 mt-4 flex items-center justify-center rounded px-4 py-2 shadow-natural hover:shadow-earth"
             >
               <Download className="w-4 h-4 mr-2" />
               Download CV
